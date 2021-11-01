@@ -6,6 +6,7 @@ import android.widget.ArrayAdapter
 import android.widget.ListView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.google.android.gms.maps.model.LatLng
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -24,13 +25,37 @@ class MainActivity : AppCompatActivity() {
         cityListView.adapter = cityAdapter
 
         cityListView.setOnItemClickListener { adapterView, view, i, id ->
-//            Toast.makeText(this@MainActivity, cityList[i], Toast.LENGTH_SHORT).show()
+            Toast.makeText(this@MainActivity, cityList[i], Toast.LENGTH_SHORT).show()
 
-            val myIntentObject =
-                Intent(this@MainActivity, MapsActivity::class.java)
+            println(">>" + cityList[i])
+            var myIntentObject: Intent=Intent(this@MainActivity, MapsActivity::class.java)
 
-            println(">>" + i)
+            when (cityList[i]) {
+                "Toronto" -> {
+                     myIntentObject =
+                        Intent(this@MainActivity, MapsActivity::class.java)
+                }
+                "Vancouver" -> {
+                    myIntentObject =
+                        Intent(this@MainActivity, Vancouver::class.java)
+                }
+                "Quebec" -> {
+//                    selectedCity = LatLng(49.2827, 123.1207)
+                    myIntentObject =
+                        Intent(this@MainActivity, Quebec::class.java)
+                }
+                "Montreal" -> {
+                    myIntentObject =
+                        Intent(this@MainActivity, Montreal::class.java)
+                }
+                "Ottawa" -> {
+                    myIntentObject =
+                        Intent(this@MainActivity, Ottawa::class.java)
+
+                }
+            }
             myIntentObject.putExtra("cityIndex", i.toString())
+
 
             // Send intent object to MapsActivity
             startActivity(myIntentObject)

@@ -8,7 +8,15 @@
          location permissions for the "MyLocation" functionality.
     -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <!--
+         The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
+         Google Maps Android API v2, but you must specify either coarse or fine
+         location permissions for the "MyLocation" functionality.
+    -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
     <application
         android:allowBackup="true"
@@ -30,6 +38,22 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
 
+        <activity
+            android:name=".Quebec"
+            android:exported="true"
+            android:label="@string/title_activity_quebec" />
+        <activity
+            android:name=".Ottawa"
+            android:exported="true"
+            android:label="@string/title_activity_ottawa" />
+        <activity
+            android:name=".Montreal"
+            android:exported="true"
+            android:label="@string/title_activity_montreal" />
+        <activity
+            android:name=".Vancouver"
+            android:exported="true"
+            android:label="@string/title_activity_vancouver" />
         <activity
             android:name=".MapsActivity"
             android:exported="true"
