@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">AishwaryaShrestha_KeshavDulal_MAPD711_Assignment3</string>
+
+    <string-array name="cities">
+        <item>Toronto</item>
+        <item>Vancouver</item>
+        <item>NewYork</item>
+        <item>California</item>
+        <item>Los Angeles</item>
+        <item>Salt Lake City</item>
+    </string-array>
+    <string name="title_activity_maps">MapsActivity</string>
+</resources>
